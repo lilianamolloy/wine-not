@@ -216,10 +216,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-<<<<<<< HEAD
-=======
   devise
->>>>>>> d63f8dbe9183bf7a66d79f9a47eba052adb0b53e
   dotenv-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

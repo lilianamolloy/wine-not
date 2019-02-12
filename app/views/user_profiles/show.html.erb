@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= @user_profile.image.attached? ? image_tag(@user_profile.image, style: "width: 300px;") : image_tag('https://bit.ly/2BywzyH')%>
+
 <p>
   <strong>First-name:</strong>
-  <%= @user_profile.first-name %>
+  <%= @user_profile.first_name %>
 </p>
 
 <p>

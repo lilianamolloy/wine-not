@@ -53,6 +53,46 @@ In the controller, where you want to authenticate the user before proceeding.
 ```ruby
 before_action :authenticate_user!
 ```
+# Adding additional fields to devise
+
+In terminal
+```
+$ rails g migration add_username_to_users username:string:uniq
+$ rails db:migrate
+```
+
+In application_controller:
+```ruby
+before_action :configure_permitted_parameters, if: :devise_controller?
+
+protected
+def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+end
+```
+
+## Generate views and controllers devise
+
+```
+$ rails generate devise:views
+```
+
+```
+$ rails generate devise:controllers [scope]
+```
+
+Tell the router to use the controllers by putting in:
+```ruby
+devise_for :users, controllers: { registrations: 'users/registrations' }
+```
+
+In the registration views for both new and edit:
+```ruby
+<div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+</div>
+```
 
 # Setting up a welcome page
 
@@ -90,4 +130,11 @@ _navbar.html.erb
         <%= link_to('Log In', new_user_session_path) %>
     <% end %>
 </nav>
+```
+
+# Set up active storage
+
+```
+$ rails active_storage:install
+$ rails db:migrate
 ```

@@ -1,8 +1,11 @@
 <nav>
+    <%= link_to('home', root_path) %>
+    <%= link_to('View wines', wines_path) %>
     <% if user_signed_in? %>
+        <%= link_to('Add wine', new_wine_path) %>
+        <%= current_user.user_profile ? link_to('Edit Profile', edit_user_profile_path(current_user.user_profile.id)) : nil %>
         <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
     <% else %>
-        <%= link_to('home', root_path) %>
         <%= link_to('Sign Up', new_user_registration_path) %>
         <%= link_to('Log In', new_user_session_path) %>
     <% end %>

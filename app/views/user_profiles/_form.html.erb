@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :first-name %>
-    <%= form.text_field :first-name %>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
   </div>
 
   <div class="field">
@@ -30,6 +30,10 @@
     <%= form.label :bio %>
     <%= form.text_area :bio %>
   </div>
+
+
+  <%= form.file_field :image %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions">
     <%= form.submit %>
