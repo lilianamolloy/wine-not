@@ -1,5 +1,7 @@
 <div class="home">
     <h1>Welcome to Wine Not</h1>
-    <p><%= @user_profile.first_name.capitalize %> <%=@user_profile.surname.capitalize %></p>
-    <%= @user_profile.image.attached? ? image_tag(@user_profile.image) : image_tag('https://bit.ly/2BywzyH')%>
+    <%if(current_user) %>
+        <p><%= current_user.user_profile.first_name.capitalize%> <%=current_user.user_profile.surname.capitalize%></p> 
+        <%= current_user.user_profile.image.attached? ? image_tag(current.user.user_profile.image) : image_tag('https://bit.ly/2BywzyH') %>
+    <% end %>
 </div>
