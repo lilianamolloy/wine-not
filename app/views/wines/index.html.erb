@@ -9,7 +9,7 @@
       <th>Wine name</th>
       <th>Year</th>
       <th>Description</th>
-      <th>Type</th>
+      <th>Colour</th>
       <th>Profile</th>
       <th colspan="3"></th>
     </tr>
@@ -22,8 +22,9 @@
         <td><%= wine.wine_name %></td>
         <td><%= wine.year %></td>
         <td><%= wine.description %></td>
-        <td><%= wine.type %></td>
+        <td><%= wine.colour %></td>
         <td><%= wine.profile_id %></td>
+        <td><%= image_tag wine.image %></td>
         <td><%= link_to 'Show', wine %></td>
         <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
         <td><%= link_to 'Destroy', wine, method: :delete, data: { confirm: 'Are you sure?' } %></td>

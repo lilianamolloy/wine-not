@@ -21,8 +21,8 @@
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @wine.type %>
+  <strong>Colour:</strong>
+  <%= @wine.colour %>
 </p>
 
 <p>
@@ -30,5 +30,7 @@
   <%= @wine.profile_id %>
 </p>
 
+<%= image_tag @wine.image %>
+<br/>
 <%= link_to 'Edit', edit_wine_path(@wine) %> |
 <%= link_to 'Back', wines_path %>
