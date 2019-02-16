@@ -5,3 +5,16 @@
         <%= current_user.user_profile.image.attached? ? image_tag(current.user.user_profile.image) : image_tag('https://bit.ly/2BywzyH') %>
     <% end %>
 </div>
+
+<h1> Wines Featured Below: </h1>
+
+<div class="wrapper">
+    <% Wine.all.each do |wine| %>
+        <div class="card">
+            <%= link_to wine_path(wine) do %>
+                <%= image_tag wine.image %>
+                <h4><div><%= wine.wine_name%></div></h4>
+            <% end %>
+        </div>
+    <% end %>
+</div>
